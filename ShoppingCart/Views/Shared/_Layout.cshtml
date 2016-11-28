@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="MediaCenter, Template, eCommerce">
+    <meta name="robots" content="all">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="MediaCenter, Template, eCommerce">
+    <meta name="robots" content="all">
+    <title>Unicase</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/green.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.transitions.css">
+    <!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
+    <link href="assets/css/lightbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/rateit.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+    <!-- Demo Purpose Only. Should be removed in production -->
+    <link rel="stylesheet" href="assets/css/config.css">
+    <link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
+    <link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
+    <link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
+    <link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
+    <!-- Demo Purpose Only. Should be removed in production : END -->
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Content/paymentInfor/paymentInfo.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <title>Unicase</title>
+    <link rel="stylesheet" href="~/Content/showDetailsProduct/showDetailsProduct.css">
+    <link rel="stylesheet" href="~/Content/showDetailsProduct/showDetailsProduct2.css">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/wishList.css">
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/green.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/assets/css/owl.transitions.css">
+    <!--<link rel="stylesheet" href="~/assets/css/owl.theme.css">-->
+    @*<link href="~/assets/css/lightbox.css" rel="stylesheet">*@
+    <link rel="stylesheet" href="~/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/css/rateit.css">
+    <link rel="stylesheet" href="~/assets/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="~/Content/myAccount/myaccount.css">
+
+    <!-- Demo Purpose Only. Should be removed in production -->
+    <link rel="stylesheet" href="~/assets/css/config.css">
+
+    <link href="~/assets/css/green.css" rel="alternate stylesheet" title="Green color">
+    <link href="~/assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link href="~/assets/css/red.css" rel="alternate stylesheet" title="Red color">
+    <link href="~/assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
+    <link href="~/assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
+    <!-- Demo Purpose Only. Should be removed in production : END -->
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="~/Content/checkout/checkout.css">
+
+    <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
+    <!--[if lt IE 9]>
+            <script src="~/assets/js/html5shiv.js"></script>
+            <script src="~/assets/js/respond.min.js"></script>
+        <![endif]-->
+    <script src="~/assets/js/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <!-- ============================================== HEADER ============================================== -->
+    <header class="header-style-1 header-style-3">
+        <div class="top-bar animate-dropdown">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="cnt-account">
+                        <ul class="list-unstyled">
+                            <li><a href="@Url.Action("Index","MyAccount")"><i class="icon fa fa-user"></i>My Account</a></li>
+                            <li><a href="@Url.Action("Index","MyCart")"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>
+                            <li><a href="@Url.Action("Index","CheckOut")"><i class="icon fa fa-key"></i>Checkout</a></li>
+                            @{
+                                var userCookies = Request.Cookies["UserLogin"];
+                            }
+                            @if (userCookies != null)
+                            {
+                                <li><a href="/Login/LogOut"><i class="icon fa fa-sign-in"></i>Logout</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="@Url.Action("Index","Login")"><i class="icon fa fa-sign-in"></i>Login</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <!-- /.cnt-account -->
+
+                    @*<div class="cnt-block">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                @if (userCookies == null)
+                                {
+                                    <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="key">You need to login</span></a>
+                                }
+                                else
+                                {
+                                    <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="key">Hello :</span><span class="value">@Session["username"].ToString()</span></a>
+                                }
+                            </li>
+                        </ul>
+                         /.list-unstyled 
+                    </div>*@
+                    <!-- /.cnt-cart -->
+                    <div class="clearfix"></div>
+                </div>
+                <!-- /.header-top-inner -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.header-top -->
+        <!-- ============================================== TOP MENU : END ============================================== -->
+        <div class="main-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 logo-holder">
+                        <!-- ============================================================= LOGO ============================================================= -->
+                        <div class="logo">
+                            <a href="@Url.Action("Index","Home")">
+
+                                <img src="assets/images/logo.png" alt="logo">
+
+                            </a>
+                        </div>
+                        <!-- /.logo -->
+                        <!-- ============================================================= LOGO : END ============================================================= -->
+                    </div>
+                    <!-- /.logo-holder -->
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 top-search-holder">
+                        <div class="contact-row">
+                            <div class="phone inline">
+                                <i class="icon fa fa-phone"></i> 0985880639
+                            </div>
+                            <div class="contact inline">
+                                <i class="icon fa fa-envelope"></i> thegioididonghanoi@gmail.com
+                            </div>
+                        </div>
+                        <!-- /.contact-row -->
+                        <!-- ============================================================= SEARCH AREA ============================================================= -->
+                        <div class="search-area">
+                            <form action="@Url.Action("Index", "Search")" method="POST">
+                                <div class="control-group">
+                                    <ul class="categories-filter animate-dropdown">
+                                        <li class="dropdown">
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="category.html">Categories <b class="caret"></b></a>
+                                        </li>
+                                    </ul>
+                                    <input class="search-field" type="text" placeholder="Search here..." id="productName" name="searchName" />
+                                    <a class="search-button" href="@Url.Action("Index", "Search")"></a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.search-area -->
+                        <!-- ============================================================= SEARCH AREA : END ============================================================= -->
+                    </div>
+                    <!-- /.top-search-holder -->
+
+                    <div class="col-xs-12 col-sm-12 col-md-3 animate-dropdown top-cart-row">
+                        <!-- ============================================================= SHOPPING CART DROPDOWN ============================================================= -->
+
+                        <div class="dropdown dropdown-cart">
+                            <a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
+                                <div class="items-cart-inner">
+                                    <div class="total-price-basket">
+                                        <span class="lbl">cart -</span>
+                                        <span class="total-price">
+                                            <span class="sign">$</span>
+                                            <span class="value">600.00</span>
+                                        </span>
+                                    </div>
+                                    <div class="basket">
+                                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    </div>
+                                    <div class="basket-item-count"><span class="count">2</span></div>
+
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="cart-item product-summary">
+                                        <div class="row">
+                                            <div class="col-xs-4">
+                                                <div class="image">
+                                                    <a href="detail.html"><img src="assets/images/cart.jpg" alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-7">
+
+                                                <h3 class="name"><a href="index.php?page-detail">Simple Product</a></h3>
+                                                <div class="price">$600.00</div>
+                                            </div>
+                                            <div class="col-xs-1 action">
+                                                <a href="#"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.cart-item -->
+                                    <div class="clearfix"></div>
+                                    <hr>
+
+                                    <div class="clearfix cart-total">
+                                        <div class="pull-right">
+
+                                            <span class="text">Sub Total :</span><span class='price'>$600.00</span>
+
+                                        </div>
+                                        <div class="clearfix"></div>
+
+                                        <a href="@Url.Action("Index","CheckOut")" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                    </div>
+                                    <!-- /.cart-total-->
+
+
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-menu-->
+                        </div>
+                        <!-- /.dropdown-cart -->
+                        <!-- ============================================================= SHOPPING CART DROPDOWN : END============================================================= -->
+                    </div>
+                    <!-- /.top-cart-row -->
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.main-header -->
+        <!-- ============================================== NAVBAR ============================================== -->
+        <div class="header-nav animate-dropdown">
+            <div class="container">
+                <div class="yamm navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="nav-bg-class">
+                        <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
+                            <div class="nav-outer">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","Home")">Home</a>
+                                    </li>
+                                    <li class="active dropdown yamm-fw" style="background:#808080;">
+
+                                        @*@model IEnumerable<object>
+                                            @{
+                                                List<ShoppingCart.product> product = Model.ToList()[0] as List<ShoppingCart.product>;
+                                                List<ShoppingCart.brand> brand = Model.ToList()[1] as List<ShoppingCart.brand>;
+                                            }*@
+                                        @*@foreach (var item in brand)
+                                            {
+                                            <li class="dropdown yamm">
+                                                <a href="@Url.Action("Index","ASUS")">@item.name</a>
+                                            </li>
+                                            }*@
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","ASUS")">ASUS</a>
+                                    </li>
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","SamSung")">SAMSUNG</a>
+                                    </li>
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","Toshiba")">TOSHIBA</a>
+                                    </li>
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","AppleMacintosh")">APPLE MACINTOSH</a>
+                                    </li>
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","Gateway")">GETWAY</a>
+                                    </li>
+                                    <li class="dropdown yamm">
+                                        <a href="@Url.Action("Index","Lenovo")">LENOVO</a>
+                                    </li>
+                                </ul>
+                                <!-- /.navbar-nav -->
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- /.nav-outer -->
+                        </div>
+                        <!-- /.navbar-collapse -->
+
+
+                    </div>
+                    <!-- /.nav-bg-class -->
+                </div>
+                <!-- /.navbar-default -->
+            </div>
+            <!-- /.container-class -->
+
+        </div>
+        <!-- /.header-nav -->
+    </header>
+
+    <!-- ============================================== HEADER : END ============================================== -->
+    <!-- ============================================== MAIN ============================================== -->
+    <div class="body-content" id="top-banner-and-menu">
+        @RenderSection("main")
+
+    </div>
+    <!-- ============================================== MAIN:END ============================================== -->
+    <!-- ============================================================= FOOTER ============================================================= -->
+    <footer id="footer" class="footer color-bg">
+        <div class="links-social inner-top-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <!-- ============================================================= CONTACT INFO ============================================================= -->
+                        <div class="contact-info">
+                            <div class="footer-logo">
+                                <div class="logo">
+                                    <a href="home.html">
+
+                                        <img src="assets/images/logo.png" alt="">
+
+                                    </a>
+                                </div>
+                                <!-- /.logo -->
+
+                            </div>
+                            <!-- /.footer-logo -->
+
+                            <div class="module-body m-t-20">
+                                <p class="about-us"> Nam libero tempore, cum soluta nobis est ses eligendi optio cumque cum soluta nobis est ses eligendi optio cumque.</p>
+                                <div id="fb-root"></div>
+
+
+                                <div class="social-icons">
+                                    <div class="fb-share-button" data-href="https://www.asp.net/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9" data-layout="button" data-size="large" data-mobile-iframe="true">
+                                        <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.asp.net/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9">
+                                            Chia sẻ
+                                        </a>
+                                    </div>
+                                    @*<a href="https://www.facebook.com/profile.php?id=100008779652609" class='active'>
+                                            <i class="icon fa fa-facebook"></i>
+                                        </a>*@
+                                    <a href="#"><i class="icon fa fa-twitter"></i></a>
+                                    <a href="#"><i class="icon fa fa-linkedin"></i></a>
+                                    <a href="#"><i class="icon fa fa-rss"></i></a>
+                                    <a href="#"><i class="icon fa fa-pinterest"></i></a>
+
+                                </div>
+                                <!-- /.social-icons -->
+                            </div>
+                            <!-- /.module-body -->
+
+                        </div>
+                        <!-- /.contact-info -->
+                        <!-- ============================================================= CONTACT INFO : END ============================================================= -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <!-- ============================================================= CONTACT TIMING============================================================= -->
+                        <div class="contact-timing">
+                            <div class="module-heading">
+                                <h4 class="module-title">opening time</h4>
+                            </div>
+                            <!-- /.module-heading -->
+
+                            <div class="module-body outer-top-xs">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Monday-Friday:</td>
+                                                <td class="pull-right">08.00 To 18.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Saturday:</td>
+                                                <td class="pull-right">09.00 To 20.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sunday:</td>
+                                                <td class="pull-right">10.00 To 20.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                                <p class='contact-number'>Hot Line:0985880639</p>
+                            </div>
+                            <!-- /.module-body -->
+                        </div>
+                        <!-- /.contact-timing -->
+                        <!-- ============================================================= CONTACT TIMING : END ============================================================= -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <!-- ============================================================= LATEST TWEET============================================================= -->
+                        <div class="latest-tweet">
+                            <div class="module-heading">
+                                <h4 class="module-title">latest tweet</h4>
+                            </div>
+                            <!-- /.module-heading -->
+
+                            <div class="module-body outer-top-xs">
+                                <div class="re-twitter">
+                                    <div class="comment media">
+                                        <div class='pull-left'>
+                                            <span class="icon fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"></a> As a result of your previous recommendation :)
+                                            <span class="time">
+                                                12 hours ago
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="re-twitter">
+                                    <div class="comment media">
+                                        <div class='pull-left'>
+                                            <span class="icon fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#"></a> As a result of your previous recommendation :)
+                                            <span class="time">
+                                                12 hours ago
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.module-body -->
+                        </div>
+                        <!-- /.contact-timing -->
+                        <!-- ============================================================= LATEST TWEET : END ============================================================= -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <!-- ============================================================= INFORMATION============================================================= -->
+                        <div class="contact-information">
+                            <div class="module-heading">
+                                <h4 class="module-title">information</h4>
+                            </div>
+                            <!-- /.module-heading -->
+
+                            <div class="module-body outer-top-xs">
+                                <ul class="toggle-footer" style="">
+                                    <li class="media">
+                                        <div class="pull-left">
+                                            <span class="icon fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <p>Tân Minh - Thường Tín - Hà Nội</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="pull-left">
+                                            <span class="icon fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <p>Hot line: 0985880639<br>Hot line: 01668533966</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="media">
+                                        <div class="pull-left">
+                                            <span class="icon fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x"></i>
+                                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div class="media-body">
+                                            <span><a href="#">Contact</a></span><br>
+                                            <span><a href="#">Sale</a></span>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!-- /.module-body -->
+                        </div>
+                        <!-- /.contact-timing -->
+                        <!-- ============================================================= INFORMATION : END ============================================================= -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.links-social -->
+
+        <div class="footer-bottom inner-bottom-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading outer-bottom-xs">
+                            <h4 class="module-title">category</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Libero Sed rhoncus</a></li>
+                                <li><a href="#">Venenatis augue tellus</a></li>
+                                <li><a href="#">My Vouchers</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading outer-bottom-xs">
+                            <h4 class="module-title">my account</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Site Map</a></li>
+                                <li><a href="#">Search Terms</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading outer-bottom-xs">
+                            <h4 class="module-title">our services</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Libero Sed rhoncus</a></li>
+                                <li><a href="#">Venenatis augue tellus</a></li>
+                                <li><a href="#">My Vouchers</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                    <!-- /.col -->
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="module-heading outer-bottom-xs">
+                            <h4 class="module-title">help & support</h4>
+                        </div>
+                        <!-- /.module-heading -->
+
+                        <div class="module-body">
+                            <ul class='list-unstyled'>
+                                <li><a href="#">Knowledgebase</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Contact Support</a></li>
+                                <li><a href="#">Marketplace Blog</a></li>
+                                <li><a href="#">About Unicase</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.module-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            <div class="container">
+                <div class="col-xs-12 col-sm-6 no-padding">
+                    <div class="copyright">
+                        Copyright © 2014
+                        <a href="home.html">Unicase Shop.</a> - All rights Reserved
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 no-padding">
+                    <div class="clearfix payment-methods">
+                        <ul>
+                            <li><img src="assets/images/payments/1.png" alt=""></li>
+                            <li><img src="assets/images/payments/2.png" alt=""></li>
+                            <li><img src="assets/images/payments/3.png" alt=""></li>
+                            <li><img src="assets/images/payments/4.png" alt=""></li>
+                            <li><img src="assets/images/payments/5.png" alt=""></li>
+                        </ul>
+                    </div>
+                    <!-- /.payment-methods -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================= FOOTER : END============================================================= -->
+
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+    <script src="~/assets/js/bootstrap-hover-dropdown.min.js"></script>
+    @*<script src="~/assets/js/owl.carousel.min.js"></script>*@
+    <script src="~/assets/js/echo.min.js"></script>
+    <script src="~/assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="~/assets/js/bootstrap-slider.min.js"></script>
+    <script src="~/assets/js/jquery.rateit.min.js"></script>
+    @*<script type="text/javascript" src="~/assets/js/lightbox.min.js"></script>*@
+    <script src="~/assets/js/bootstrap-select.min.js"></script>
+    <script src="~/assets/js/wow.min.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <script src="~/Scripts/showDeailsProduct.js"></script>
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+
+
+    <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+    <!-- If you're using Stripe for payments -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="assets/js/echo.min.js"></script>
+    <script src="assets/js/jquery.easing-1.3.min.js"></script>
+    <script src="assets/js/bootstrap-slider.min.js"></script>
+    <script src="assets/js/jquery.rateit.min.js"></script>
+    @*<script type="text/javascript" src="assets/js/lightbox.min.js"></script>*@
+    <script src="~/switchstylesheet/switchstylesheet.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="~/Content/checkout/CheckOut.js"></script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=952499534863008";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>

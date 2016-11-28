@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section main {
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="UserTableContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        $(document)
+            .ready(function() {
+                //Prepare jtable plugin
+                $('#UserTableContainer')
+                    .jtable({
+                        title: 'List User',
+                        actions: {
+                            listAction: '/Index/GetListUser',
+                            createAction: '/Index/AddUser',
+                            updateAction: '/Index/UpdateUser',
+                            deleteAction: '/Index/DeleteUser'
+                        },
+                        fields: {
+                            id: {
+                                key: true,
+                                create: false,
+                                edit: false,
+                                list: false
+                            },
+                            username: {
+                                title: 'Username',
+                                width: '5%'
+                            },
+                            name: {
+                                title: 'Name',
+                            },
+                            password:{
+                                title: 'Password',
+                                type: 'password',
+                                list: false
+                            },
+                            user_address: {
+                                title: 'Address',
+                            },
+                            age: {
+                                title: 'Age',
+                            },
+                            phonenumber: {
+                                title: 'Phone Number',
+                            },
+                            //roleName: {
+                            //    title: 'Role Name',
+                            //    edit: false
+                            //},
+                            roleid: {
+                                title: "Role Name",
+                                options: {
+                                    '2': 'Admin',
+                                    '1': 'User',
+                                },
+                                
+                            }
+                        }
+                    });
+
+                //Load student list from server
+                $('#UserTableContainer').jtable('load');
+            });
+    </script>
+
+}

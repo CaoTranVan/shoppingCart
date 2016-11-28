@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section main{
+   <div class="body-content outer-top-xs">
+    <div class="container">
+        <div class="row inner-bottom-sm">
+            <div class="shopping-cart">
+                <div class="col-md-12 col-sm-12 shopping-cart-table ">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="cart-romove item">Remove</th>
+                                    <th class="cart-product-name item">Product Name</th>
+                                    <th class="cart-description item">Description</th>
+                                    <th class="cart-edit item">Edit</th>
+                                    <th class="cart-qty item">Quantity</th>
+                                    <th class="cart-sub-total item">Subtotal</th>
+                                    <th class="cart-total last-item">Grandtotal</th>
+                                </tr>
+                            </thead><!-- /thead -->
+                            <tfoot>
+                                <tr>
+                                    <td colspan="7">
+                                        <div class="shopping-cart-btn">
+                                            <span class="">
+                                                <a href="@Url.Action("Index","Home")" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
+                                                <a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">Update shopping cart</a>
+                                            </span>
+                                        </div><!-- /.shopping-cart-btn -->
+                                    </td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                            @using ShoppingCart.Controllers
+                            @foreach (ItemProduct item in (List<ItemProduct>)Session["cart"])
+                            {
+                                <tr>
+                                    <td class="romove-item"><a href="/MyCart/Delete/@item.Pr.id" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
+                                    <td class="cart-product-name-info">
+                                        <h4 class='cart-product-description'><a href="#">@item.Pr.NAME</a></h4>
+                                        <div class="cart-product-info">
+                                            <span class="product-imel">ID:<span>@item.Pr.id</span></span><br>
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-name-info">
+                                        <h4 class='cart-product-description'><a href="#">@item.Pr.description</a></h4>
+                                    </td>
+
+                                    <td class="cart-product-edit"><a href="#" class="product-edit">Edit</a></td>
+                                    <td class="cart-product-quantity">
+                                        <div class="quant-input">
+                                            <h5>@item.Quantity</h5>
+                                            <div class="arrows">
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="cart-product-sub-total"><span class="cart-sub-total-price">@item.Pr.price VND</span></td>
+                                    <td class="cart-product-grand-total"><span class="cart-grand-total-price">@(item.Pr.price * item.Quantity) VND</span></td>
+                                </tr>
+                            }
+                            </tbody><!-- /tbody -->
+                        </table><!-- /table -->
+                    </div>
+                </div><!-- /.shopping-cart-table -->				
+            </div><!-- /.shopping-cart -->
+        </div> <!-- /.row -->
+        <!-- ============================================== BRANDS CAROUSEL ============================================== -->
+        <!-- /.logo-slider -->
+        <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->
+    </div><!-- /.container -->
+</div><!-- /.body-content -->
+}
+
+
